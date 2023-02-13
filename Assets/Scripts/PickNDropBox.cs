@@ -17,12 +17,15 @@ public class PickNDropBox : MonoBehaviour
 
     Collider colliderBox;
 
+    public GameObject combineBox;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
         boxContainer = GameObject.FindGameObjectWithTag("BoxContainer").GetComponent<Transform>();
         tppCam = GameObject.FindGameObjectWithTag("BoxHandler").GetComponent<Transform>();
         dropArea = GameObject.FindGameObjectsWithTag("DropArea");
+        combineBox = GameObject.FindGameObjectWithTag("DropAreaParent");
         colliderBox = GetComponent<Collider>();
 
         if(!equipped)
@@ -95,7 +98,8 @@ public class PickNDropBox : MonoBehaviour
                 {
                     coll.isTrigger = true;
                     rb.isKinematic = true;
-                    dropAr.GetComponent<DropArea>().isFill = true;
+                    dropAr.GetComponent<DropAreaP>().isFill = true;
+                    combineBox.GetComponent<CombineBox>().Boxs.Add(dropAr.GetComponent<DropAreaP>().idBox);
 
                     transform.SetParent(dropAr.transform);
                     transform.position = dropAr.transform.position;

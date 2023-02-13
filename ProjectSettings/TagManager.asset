@@ -19,6 +19,7 @@ TagManager:
   - BoxHZ
   - BoxUX
   - BoxUZ
+  - DropAreaParent
   layers:
   - Default
   - TransparentFX

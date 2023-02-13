@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -462,7 +462,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612629372}
-  m_LocalRotation: {x: 0.117014244, y: -0.00000003417636, z: 0.000000004026784, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: 0.00000003417636, z: -0.000000004026784, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 8.53, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -573,7 +573,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645767452}
-  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
+  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1484,7 +1484,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785719801}
-  m_LocalRotation: {x: 0.11701424, y: -0.00000001708818, z: 0.000000002013392, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: 0.000000017088176, z: -0.0000000020133915, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1818,21 +1818,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5519994652231138249, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138251, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_Name
       value: BoxPrototype
       objectReference: {fileID: 0}
-    - target: {fileID: 5519994652231138252, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138253, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
-      propertyPath: dropRange
-      value: 1
+      propertyPath: combineBox
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138255, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_RootOrder
@@ -1889,9 +1881,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982034276}
+  - component: {fileID: 1982034277}
   m_Layer: 10
   m_Name: DropAreasPrototype
-  m_TagString: Untagged
+  m_TagString: DropAreaParent
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1915,6 +1908,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982034277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982034275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8832819b3320414a949e57ca7f4e7eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boxs: 
 --- !u!4 &1451966256931096260
 Transform:
   m_ObjectHideFlags: 0
@@ -1956,6 +1962,7 @@ GameObject:
   - component: {fileID: 1451966256931096314}
   - component: {fileID: 1451966256931096315}
   - component: {fileID: 1451966256931096261}
+  - component: {fileID: 1451966256931096316}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -1992,6 +1999,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1451966256931096316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451966256931096263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 2
+  isFill: 0
 --- !u!4 &1737270200957600797
 Transform:
   m_ObjectHideFlags: 0
@@ -2285,6 +2306,7 @@ GameObject:
   - component: {fileID: 2937016910428591715}
   - component: {fileID: 2937016910428591713}
   - component: {fileID: 2937016910428591712}
+  - component: {fileID: 2937016910428591716}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2307,6 +2329,20 @@ Transform:
   m_Father: {fileID: 1737270202409168000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2937016910428591716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937016910428591714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 5
+  isFill: 0
 --- !u!33 &4202695531302993834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2418,6 +2454,7 @@ GameObject:
   - component: {fileID: 6578587417418803046}
   - component: {fileID: 6578587417418803064}
   - component: {fileID: 6578587417418803065}
+  - component: {fileID: 6578587417418803066}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2451,6 +2488,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
+--- !u!114 &6578587417418803066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578587417418803047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 4
   isFill: 0
 --- !u!65 &7282280389133596560
 BoxCollider:
@@ -2505,6 +2556,7 @@ GameObject:
   - component: {fileID: 7282280389133596562}
   - component: {fileID: 7282280389133596560}
   - component: {fileID: 7282280389133596561}
+  - component: {fileID: 7282280389133596564}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2512,6 +2564,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7282280389133596564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282280389133596563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 3
+  isFill: 0
 --- !u!4 &7408811307389276136
 Transform:
   m_ObjectHideFlags: 0
@@ -2565,6 +2631,7 @@ GameObject:
   - component: {fileID: 7408811307389276136}
   - component: {fileID: 7408811307389276138}
   - component: {fileID: 7408811307389276137}
+  - component: {fileID: 7408811307389276144}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2572,6 +2639,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7408811307389276144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408811307389276143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 8
+  isFill: 0
 --- !u!65 &7490215848829119032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2626,6 +2707,7 @@ GameObject:
   - component: {fileID: 7490215848829119032}
   - component: {fileID: 7490215848829119036}
   - component: {fileID: 7490215848829119033}
+  - component: {fileID: 7490215848829119037}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2649,6 +2731,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7490215848829119037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490215848829119035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 1
+  isFill: 0
 --- !u!65 &7504841885810683664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2673,6 +2769,7 @@ GameObject:
   - component: {fileID: 7504841885810683670}
   - component: {fileID: 7504841885810683664}
   - component: {fileID: 7504841885810683671}
+  - component: {fileID: 7504841885810683672}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2709,6 +2806,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTriggerArea: 0
   isFill: 0
+--- !u!114 &7504841885810683672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504841885810683669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 6
+  isFill: 0
 --- !u!4 &7546002933514441184
 Transform:
   m_ObjectHideFlags: 0
@@ -2735,6 +2846,7 @@ GameObject:
   - component: {fileID: 7546002933514441184}
   - component: {fileID: 7546002933514441186}
   - component: {fileID: 7546002933514441187}
+  - component: {fileID: 7546002933514441188}
   m_Layer: 10
   m_Name: DropAreaContainer
   m_TagString: DropArea
@@ -2768,4 +2880,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
+--- !u!114 &7546002933514441188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546002933514441185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460fc90f903cd9f499e296652d90262e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idBox: 7
   isFill: 0
